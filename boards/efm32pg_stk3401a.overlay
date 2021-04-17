@@ -3,10 +3,22 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
-
-&i2c0{
-	si7021:si7021@0{
-		status="okay";
+ 
+/ {
+    Si7021_pwr: Si7021-pwr-ctrl {
+        compatible = "regulator-fixed";
+        regulator-name = "Si7021 enable pin";
+        enable-gpios = < &gpiod 9 0 >;
+        label = "Si7021-pwr";
+		status = "okay";
+    };
+};
+&i2c0 { 
+	status = "okay";
+	si7021@40{
+		compatible = "silabs,si7006";
+		reg = <0x40>;
+		label = "Si7021";
+		status = "okay";
 	};
 };
