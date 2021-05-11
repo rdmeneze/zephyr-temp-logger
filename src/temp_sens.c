@@ -75,6 +75,12 @@ int sens_temp_enable(void)
     return rc;
 }
 
+int sens_temp_disable(void)
+{
+	int rc = regulator_disable( pwr );
+	return rc;
+}
+
 int sens_temp_sample_fetch()
 {
     int rc = sensor_sample_fetch(dev_si7021);

@@ -6,6 +6,8 @@ int sens_temp_init(void);
 
 int sens_temp_enable(void);
 
+int sens_temp_disable(void);
+
 int sens_temp_sample_fetch( void );
 
 int sens_temp_get_temp(struct sensor_value* value);
